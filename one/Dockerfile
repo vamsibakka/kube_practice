@@ -1,6 +1,6 @@
 FROM ubuntu:latest 
 RUN apt update && apt install openjdk-17-jdk -y  && \
-    apt install wget -y && apt install maven -y  && install git -y 
+    apt install maven -y  && install git -y 
 RUN git clone https://github.com/spring-projects/spring-petclinic.git 
 WORKDIR /spring-petclinic 
 RUN mvn clean package
