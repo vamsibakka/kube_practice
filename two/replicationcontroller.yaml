@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: ReplicationController
+metadata:
+  name: replica-1
+  labels:
+    app: apache
+    version: latest
+spec:
+  minReadySeconds: 0 # bydefault value '0'
+  replicas: 2
+  selector:
+    app: apache
+  template:
+    metadata:
+      name: apache_pod
+      labels:
+        app: apache
+        version: latest
+      spec:
+        containers:
+          - name: apache_container
+            image: apache:latest
+            livenessProbe:
+              initialDelaySeconds: 5
+            ports:
+              - containerPort: 80
+                protocol: TCP
