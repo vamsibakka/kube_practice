@@ -1,0 +1,27 @@
+apiVersion: app/v1
+kind: ReplicaSet
+metadata:
+  name: replica_set
+  labels:
+    app: replica_apache
+    version: 1.0
+spec:
+  minReadySeconds: 3
+  replicas: 2
+  selector:
+    matchLabels:
+      app: replica_apache
+      version: 1.0
+  template:
+    metadata:
+      name: apachepod
+      labels:
+        app: replica_apache
+        version: 1.0
+    spec:
+      containers:
+        - name: apachecontainer
+          image: apache:latest
+          ports:
+            - containerPort: 80
+              protocol: TCP
