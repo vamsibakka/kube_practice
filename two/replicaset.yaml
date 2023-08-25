@@ -1,3 +1,4 @@
+---
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
@@ -25,3 +26,17 @@ spec:
           ports:
             - containerPort: 80
               protocol: TCP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: replicaset_svc
+spec:
+  type: NodePort 
+  selector: 
+    app: replica_apache 
+  ports: 
+    - port: 30001
+      nodePort: 8080
+      targetPort: 80
+---
