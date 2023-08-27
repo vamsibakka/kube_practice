@@ -33,7 +33,7 @@ spec:
   selector: 
     app: deployment 
   ports: 
-    - port: 30000
-      nodePort: 8080
+    - port: 8080
+      nodePort: 30000
       targetPort: 80
 ---
