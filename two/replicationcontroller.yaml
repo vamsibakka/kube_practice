@@ -17,15 +17,15 @@ spec:
       labels:
         app: apache
         version: latest
-      spec:
-        containers:
-          - name: apache-container
-            image: httpd:latest
-            livenessProbe:
-              initialDelaySeconds: 5
-            ports:
-              - containerPort: 80
-                protocol: TCP
+    spec:
+      containers:
+        - name: apache-container
+          image: httpd:latest
+          livenessProbe:
+            initialDelaySeconds: 5
+          ports:
+            - containerPort: 80
+              protocol: TCP
 ---
 apiVersion: v1
 kind: Service
