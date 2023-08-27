@@ -5,20 +5,20 @@ metadata:
   name: replica-set
   labels:
     app: replica-apache
-    version: 1.0
+    version: "1.0"
 spec:
   minReadySeconds: 3
   replicas: 2
   selector:
     matchLabels:
       app: replica-apache
-      version: 1.0
+      version: "1.0"
   template:
     metadata:
       name: apachepod
       labels:
         app: replica-apache
-        version: 1.0
+        version: "1.0"
     spec:
       containers:
         - name: apachecontainer
