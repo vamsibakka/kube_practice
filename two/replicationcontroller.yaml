@@ -23,6 +23,9 @@ spec:
           image: httpd:latest
           livenessProbe:
             initialDelaySeconds: 5
+            httpGet:
+              path: /health
+              port: 80
           ports:
             - containerPort: 80
               protocol: TCP
