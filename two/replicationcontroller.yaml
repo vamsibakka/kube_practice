@@ -20,7 +20,7 @@ spec:
       spec:
         containers:
           - name: apache-container
-            image: apache:latest
+            image: httpd:latest
             livenessProbe:
               initialDelaySeconds: 5
             ports:
