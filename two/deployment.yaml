@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: deployment_test
+  name: deployment-test
   labels: 
     app: deployment
 spec:
@@ -13,12 +13,12 @@ spec:
       app: deployment 
   template: 
     metadata: 
-      name : deployment_pod
+      name : deployment-pod
       labels:
         app: deployment 
     spec: 
       containers: 
-        - name: deployment_container
+        - name: deployment-container
           image: apache:latest 
           ports: 
             - containerPort: 80 
@@ -27,7 +27,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: deployment_svc
+  name: deployment-svc
 spec:
   type: NodePort 
   selector: 

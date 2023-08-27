@@ -13,13 +13,13 @@ spec:
     app: apache
   template:
     metadata:
-      name: apache_pod
+      name: apache-pod
       labels:
         app: apache
         version: latest
       spec:
         containers:
-          - name: apache_container
+          - name: apache-container
             image: apache:latest
             livenessProbe:
               initialDelaySeconds: 5
@@ -30,7 +30,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: replicacontroller_svc
+  name: replicacontroller-svc
 spec:
   type: NodePort 
   selector: 
