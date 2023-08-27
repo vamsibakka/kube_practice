@@ -32,11 +32,12 @@ kind: Service
 metadata:
   name: replicacontroller-svc
 spec:
-  type: NodePort 
-  selector: 
-    app: apache 
-  ports: 
+  type: NodePort
+  selector:
+    app: apache
+  ports:
     - port: 8080
       nodePort: 30002
       targetPort: 80
---- 
+---
+
